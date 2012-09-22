@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="UPz-lM-eDy">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <development version="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+    </dependencies>
+    <scenes>
+        <!--App Finder View Controller-->
+        <scene sceneID="gz4-S6-9s4">
+            <objects>
+                <viewController id="UPz-lM-eDy" userLabel="App Finder View Controller" customClass="KGViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lol-jg-niR">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="YI6-54-R86" userLabel="Title View">
+                                <rect key="frame" x="20" y="20" width="728" height="54"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="AppFinderLogo~ipad.png" id="eIq-LB-1iD" userLabel="Title Image View">
+                                        <rect key="frame" x="293" y="13" width="142" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98431378599999997" green="0.98039221759999995" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" id="UQ0-hW-b92" userLabel="Detail View" customClass="KGDetailView">
+                                <rect key="frame" x="20" y="94" width="728" height="622"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Logo Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HpH-hv-JQn" userLabel="Title Label">
+                                        <rect key="frame" x="20" y="8" width="688" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="titleLabel" destination="HpH-hv-JQn" id="191-Il-r0x"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="PmB-om-o1m" userLabel="Circle Menu" customClass="KGCircleMenu">
+                                <rect key="frame" x="0.0" y="751" width="768" height="339"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" image="CircleMenu~ipad.png" highlightedImage="CircleMenuArrow~ipad.png" id="nWM-HG-ckT">
+                                        <rect key="frame" x="319" y="105" width="130" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="UPz-lM-eDy" id="gaR-W5-2YV"/>
+                                    <outlet property="delegate" destination="UPz-lM-eDy" id="AbN-yw-IjX"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="circleMenu" destination="PmB-om-o1m" id="jYL-kv-THi"/>
+                        <outlet property="circleMenuImageView" destination="nWM-HG-ckT" id="OWh-QX-ESv"/>
+                        <outlet property="detailTitleLabel" destination="HpH-hv-JQn" id="nKY-6u-Wt0"/>
+                        <outlet property="detailView" destination="UQ0-hW-b92" id="Q5M-Zh-w5E"/>
+                        <outlet property="titleBackgroundView" destination="YI6-54-R86" id="LCu-z9-ovi"/>
+                        <segue destination="55B-Ez-uhz" kind="modal" identifier="Launch App" id="Mhh-Ie-N8P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oKl-W4-A6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-527" y="-13"/>
+        </scene>
+        <!--App View Controller-->
+        <scene sceneID="Ml1-k7-bq7">
+            <objects>
+                <viewController id="55B-Ez-uhz" customClass="KGAppViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qBK-dk-vEP">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Try drawing here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ewg-Co-L5v">
+                                <rect key="frame" x="306" y="491" width="156" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Tm0-1j-G7G" userLabel="Main Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="kcJ-f9-fTW" userLabel="Temp Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hd4-ig-5XI">
+                                <rect key="frame" x="294" y="940" width="181" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Back to App Finder">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="55B-Ez-uhz" eventType="touchUpInside" id="5tb-5J-3Hl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431378599999997" green="0.98039221759999995" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <connections>
+                        <outlet property="hintLabel" destination="Ewg-Co-L5v" id="GbD-sg-eA5"/>
+                        <outlet property="mainImageView" destination="Tm0-1j-G7G" id="jeG-Es-976"/>
+                        <outlet property="tempImageView" destination="kcJ-f9-fTW" id="CiC-dS-hLW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6o-CV-Qnj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="404" y="-13"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AppFinderLogo~ipad.png" width="142" height="28"/>
+        <image name="CircleMenuArrow~ipad.png" width="130" height="130"/>
+        <image name="CircleMenu~ipad.png" width="130" height="130"/>
+    </resources>
+    <classes>
+        <class className="KGAppViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KGAppViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="hintLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mainImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tempImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="KGCircleMenu" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KGCircleMenu.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dataSource"/>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+        <class className="KGDetailView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KGDetailView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="KGViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KGViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="circleMenu" candidateClass="KGCircleMenu"/>
+                <relationship kind="outlet" name="circleMenuImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="detailTitleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailView" candidateClass="KGDetailView"/>
+                <relationship kind="outlet" name="titleBackgroundView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
